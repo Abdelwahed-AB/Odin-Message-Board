@@ -4,7 +4,11 @@ extends layout
 block content
     main 
         form.message_form(action='' method='POST')
-            input#mform_title(type='text' name='title' placeholder='Title')
-            textarea#mform_message(name='message' placeholder='Message' cols='30' rows='10')
-            input#mform_user(type='text' name='user' placeholder='Username')
+            input#mform_title(type='text' name='title' placeholder='Title' value=(undefined===title?"":title))
+            textarea#mform_message(name='message' placeholder='Message' cols='30' rows='10')= message===undefined?'':message
+            input#mform_user(type='text' name='user' placeholder='Username' value=(undefined===user?"":user))
             button#mform_submit(type='submit') Post
+        if errors 
+            ul.errors 
+                each err in errors 
+                    li=err.msg

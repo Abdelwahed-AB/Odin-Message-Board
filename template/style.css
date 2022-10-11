@@ -132,3 +132,7 @@ main{
     background-color: white;
     border: .25rem solid var(--color-secondary);
 }
+
+.errors{
+    color: #FF8787;
+}

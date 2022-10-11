@@ -3,11 +3,11 @@ extends layout
 block content
   main  
     a.newMessage(href="/new") Speaketh thy mind
-    .message_container
+    .messages_container
       each msg in messages
         .message
           h1.message_title=msg.title 
-          p.message_text=msg.message 
+          p.message_text=msg.text 
           .message_footer 
             p.message_user=msg.user 
             p.message_date=msg.date
